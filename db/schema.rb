@@ -12,21 +12,20 @@
 
 ActiveRecord::Schema.define(version: 20180110085325) do
 
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "price", precision: 10, scale: 2
     t.boolean "published"
-    t.string "short_description"
-    t.integer "category_id"
+    t.bigint "category_id"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
