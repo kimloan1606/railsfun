@@ -9,4 +9,7 @@ class Product < ActiveRecord::Base
  		errors.add(:description, 'can not be shorter han title')
  	end
  end
+ scope :active, -> {where(published: true)}
+ scope :priced_more_than, -> (price) {where('price > ?', price)}
+
 end
