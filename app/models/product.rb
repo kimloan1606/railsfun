@@ -4,6 +4,8 @@ class Product < ActiveRecord::Base
  validates :price, presence: true, numericality: { greater_than: 0 }
  before_save :strip_html_from_description
  before_validation :title_lower_case
+ belongs_to :category, optional: true
+
  def title_lower_case
  	self.title = title.downcase
  	
