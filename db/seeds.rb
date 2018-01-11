@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ActiveRecord::Base.connection.execute('ALTER TABLE too_bars AUTO_INGREATMENT=1')
+Product.create!(title: 'Ruby Book', description: 'learn ruby programing' , price: 12.99, published: true)
+Product.create!(title: 'jQuery Book', description: 'learn jQuery', price: 11.99, published:true)
+Product.create!(title: 'SASS Book', description: 'learn CSS with SASS', price: 19.99, published: true)
