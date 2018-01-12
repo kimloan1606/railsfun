@@ -7,6 +7,7 @@ class Product < ActiveRecord::Base
  belongs_to :category, optional: true
  extend Enumerize
   enumerize :level, in: [:hard,:normal,:easy]
+  enumerize :country, in: ISO3166::Country.all_translated
 
  def title_lower_case
  	self.title = title.downcase
