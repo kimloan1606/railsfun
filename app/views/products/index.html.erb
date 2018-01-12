@@ -16,6 +16,7 @@
 	<td><%= p.price%></td>
 	<td><%= p.category.try(:title) %></td>
 	<td><%= link_to('Edit', edit_product_path(p)) %></td>
+	<td><%= link_to('Delete', product_path(p), method: :delete, data: {confirm:'co muon xoa hok?'}) %></td>
 	</tr>
 	<% end%>
 </table>

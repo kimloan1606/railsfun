@@ -29,8 +29,17 @@ class ProductsController < ApplicationController
 				else flash.now[:notice] ='ko thanh cong'
 					render :new
 		end
+
 		
 	end
+	def destroy
+		@product =Product.find(params[:id])
+		flash.now[:notice] = 'xoa ko dc'
+		flash.now[:notice] = 'xoa dc roi' if @product.destroy
+			return redirect_to products_path
+		end
+
+		
 	private
 	def product_params
 		params.require(:product).permit(:title, :description, :price, :published, :category_id, :level)
